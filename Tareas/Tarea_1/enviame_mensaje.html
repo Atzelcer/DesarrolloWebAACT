@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de Contacto</title>
 </head>
 <body>
-    
+    <div style="border: 2px solid black; padding: 20px; margin: 40px;">
+        <center>
+            <h1>Formulario de Contacto</h1>
+        </center>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br><br>
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required><br><br>
+            
+            <label for="celular">Número de Celular:</label>
+            <input type="tel" id="celular" name="celular" required><br><br>
+            
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion"><br><br>
+            
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad"><br><br>
+            
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais"><br><br>
+            
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea><br><br>
+            
+            <button type="reset">Eliminar</button>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <center>
+        <h2><font face="Trebuchet MS">Navega a otras páginas:</font></h2>
+        <button onclick="location.href='yo.html'">Principal</button>
+        <button onclick="location.href='enviame_mensaje.html'">Envíame un mensaje</button>
+        <button onclick="location.href='mi_ciudad.html'">Mi Ciudad</button>
+        <button onclick="location.href='mi_familia.html'">Mi Familia</button>
+        <button onclick="location.href='mis_amigos.html'">Mis Amigos</button>
+        <button onclick="location.href='mis_hobbies.html'">Mis Hobbies</button>
+    </center>
 </body>
 </html>
