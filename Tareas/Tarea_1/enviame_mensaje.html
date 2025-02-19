@@ -6,48 +6,82 @@
     <title>Formulario de Contacto</title>
 </head>
 <body>
-    <div style="border: 2px solid black; padding: 20px; margin: 40px;">
-        <center>
-            <h1>Formulario de Contacto</h1>
-        </center>
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
-            
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required><br><br>
-            
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required><br><br>
-            
-            <label for="celular">Número de Celular:</label>
-            <input type="tel" id="celular" name="celular" required><br><br>
-            
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion"><br><br>
-            
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad"><br><br>
-            
-            <label for="pais">País:</label>
-            <input type="text" id="pais" name="pais"><br><br>
-            
-            <label for="mensaje">Mensaje:</label><br>
-            <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea><br><br>
-            
-            <button type="reset">Eliminar</button>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+    <center>
+        <h2><font face="Trebuchet MS">DESARROLLO WEB - SIS 256 - TAREA #1</font></h2>
+    </center>
 
     <center>
-        <h2><font face="Trebuchet MS">Navega a otras páginas:</font></h2>
+        <hr>
         <button onclick="location.href='yo.html'">Principal</button>
         <button onclick="location.href='enviame_mensaje.html'">Envíame un mensaje</button>
         <button onclick="location.href='mi_ciudad.html'">Mi Ciudad</button>
         <button onclick="location.href='mi_familia.html'">Mi Familia</button>
         <button onclick="location.href='mis_amigos.html'">Mis Amigos</button>
         <button onclick="location.href='mis_hobbies.html'">Mis Hobbies</button>
+        <hr>
     </center>
+
+    <div style="border: 2px solid black; padding: 20px; margin: 40px;">
+        <center>
+            <h1>Formulario de Contacto</h1>
+        </center>
+        <form style="font-family: Verdana;">
+            <table align="center">
+                <tr>
+                    <td align="right"><label for="nombre">Nombre:</label></td>
+                    <td><input type="text" id="nombre" name="nombre" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="apellido">Apellido:</label></td>
+                    <td><input type="text" id="apellido" name="apellido" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="correo">Correo Electrónico:</label></td>
+                    <td><input type="email" id="correo" name="correo" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="codigo-pais">Código de País:</label></td>
+                    <td>
+                        <select id="codigo-pais" name="codigo-pais" required>
+                            <option value="">Seleccionar Código de País</option>
+                            <option value="+591">+591 Bolivia</option>
+                            <option value="+1">+1 Estados Unidos</option>
+                            <option value="+52">+52 México</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="celular">Número de Celular:</label></td>
+                    <td><input type="tel" id="celular" name="celular" required placeholder="Número de Celular"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="direccion">Dirección:</label></td>
+                    <td><input type="text" id="direccion" name="direccion"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="ciudad">Ciudad:</label></td>
+                    <td><input type="text" id="ciudad" name="ciudad"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="pais">País:</label></td>
+                    <td><input type="text" id="pais" name="pais"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="fecha-nacimiento">Fecha de Nacimiento:</label></td>
+                    <td><input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="mensaje">Mensaje:</label></td>
+                    <td><textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>
