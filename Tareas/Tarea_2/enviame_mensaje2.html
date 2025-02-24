@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="enviame_mensaje2.css">
+</head>
+<body>
+    <center>
+        <h1>DESARROLLO WEB - SIS 256 - TAREA #2 - CSS</h1>
+    </center>
+
+    <center>
+        <div class="button-container">
+            <button onclick="location.href='yo2.html'">Principal</button>
+            <button onclick="location.href='mi_familia2.html'">Mi Familia</button>
+            <button onclick="location.href='mis_amigos2.html'">Mis Amigos</button>
+            <button onclick="location.href='mis_hobbies2.html'">Mis Hobbies</button>
+            <button onclick="location.href='mi_ciudad2.html'">Mi Ciudad</button>
+            <button onclick="location.href='enviame_mensaje2.html'">Envíame un mensaje</button>
+        </div>
+    </center>
+    <hr>
+    <br>
+    <div class="responsive-box">
+        <center>
+            <h2><font face="impact">Formulario de Contacto</font></h2>
+        </center>
+        <form style="font-family: Verdana;">
+            <table align="center">
+                <tr>
+                    <td align="right"><label for="nombre">Nombre:</label></td>
+                    <td><input type="text" id="nombre" name="nombre" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="apellido">Apellido:</label></td>
+                    <td><input type="text" id="apellido" name="apellido" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="correo">Correo Electrónico:</label></td>
+                    <td><input type="email" id="correo" name="correo" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="codigo-pais">Código de País:</label></td>
+                    <td>
+                        <select id="codigo-pais" name="codigo-pais" required>
+                            <option value="">Seleccionar Código de País</option>
+                            <option value="+591">+591 Bolivia</option>
+                            <option value="+1">+1 Estados Unidos</option>
+                            <option value="+52">+52 México</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="celular">Número de Celular:</label></td>
+                    <td><input type="tel" id="celular" name="celular" required placeholder="Número de Celular"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="direccion">Dirección:</label></td>
+                    <td><input type="text" id="direccion" name="direccion"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="ciudad">Ciudad:</label></td>
+                    <td><input type="text" id="ciudad" name="ciudad"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="pais">País:</label></td>
+                    <td><input type="text" id="pais" name="pais"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="fecha-nacimiento">Fecha de Nacimiento:</label></td>
+                    <td><input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="mensaje">Mensaje:</label></td>
+                    <td><textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <footer>
+        <p>Atzel Alan Cervantes Torres</p>
+        <p>Correo: atzelcer@gmail.com</p>
+        <p>Carrera: Ingeniería en Ciencias de la Computación</p>
+        <br>
+
+        <div class="footer-icons">
+            <a href="https://wa.me/qr/W5KYOB6FW7KCM1" target="_blank" rel="noopener">
+                <img src="imagenes2/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/atzel.cervantes.7/" target="_blank" rel="noopener">
+                <img src="imagenes2/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://x.com/Atzelcer" target="_blank" rel="noopener">
+                <img src="imagenes2/gorjeo.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/scatfonther/" target="_blank" rel="noopener">
+                <img src="imagenes2/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/atzel-alan-cervantes-torres-52abb61a6/" target="_blank" rel="noopener">
+                <img src="imagenes2/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
