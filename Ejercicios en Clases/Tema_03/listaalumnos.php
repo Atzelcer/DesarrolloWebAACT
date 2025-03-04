@@ -8,7 +8,7 @@
     echo "<table border='1' style='border-collapse: collapse;'>";
     echo "<tr><th>Nombre</th><th>Apellido</th><th>Edad</th></tr>";///veamos
 
-    foreach ($lista_alumno as $alumno) {
+    foreach ($lista_alumno as $alumno) {//comenzamos
         echo "<tr>";
         echo "<td>".$alumno["nombre"]."</td>";
         echo "<td>".$alumno["apellido"]."</td>";
