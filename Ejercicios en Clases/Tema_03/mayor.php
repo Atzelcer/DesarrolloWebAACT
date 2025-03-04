@@ -18,7 +18,7 @@
             echo "El número mayor es: $num2";
         } else {
             echo "el numero mayor es: $num3";
-        }
+        }//dfsadfasdf
     ?>
 </body>
 </html>
