@@ -6,7 +6,7 @@
 
     $lista_alumno = array($alumno1, $alumno2, $alumno3, $alumno4);
     echo "<table border='1' style='border-collapse: collapse;'>";
-    echo "<tr><th>Nombre</th><th>Apellido</th><th>Edad</th></tr>";
+    echo "<tr><th>Nombre</th><th>Apellido</th><th>Edad</th></tr>";///veamos
 
     foreach ($lista_alumno as $alumno) {
         echo "<tr>";
