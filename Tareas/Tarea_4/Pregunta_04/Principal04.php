@@ -12,11 +12,11 @@
 
     <?php
         echo "<form action='tablaintercalado.php' method='GET'>";
-        echo "<label for='columnas'><strong>Número de Columnas:</strong></label>";
+        echo "<label for='columnas'><strong>Numero de Columnas:</strong></label>";
         echo "<input type='number' name='columnas' id='columnas' required min='1'>";
         echo "<br><br>";
 
-        echo "<label for='filas'><strong>Número de Filas:</strong></label>";
+        echo "<label for='filas'><strong>Numero de Filas:</strong></label>";
         echo "<input type='number' name='filas' id='filas' required min='1'>";
         echo "<br><br>";
 
