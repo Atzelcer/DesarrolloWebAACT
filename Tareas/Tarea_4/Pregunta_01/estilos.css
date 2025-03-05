@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #b0c2e7;
+    text-align: center;
+}
+
+
+form{
+    padding: 20px;
+    border: 4px solid #007bff;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+button {
+    background-color: #007bff;
+    color:white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    color:#007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #007bff;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 250px;
+}
+
+.tabla-valores {
+    margin-top: 15px;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabla-valores th {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+}
+
+.tabla-valores th, .tabla-valores td {
+    border: 1px solid #007bff;
+    padding: 10px;
+}
+
+
+.area-recuadro {
+    margin: 5px auto;
+    padding: 5px;
+    border: px solid #007bff;
+    background-color: #e6f0ff;
+    border-radius: 5px;
+    width: 180px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+}
