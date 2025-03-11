@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Tablero</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <h2>Generador de Tablero de Ajedrez</h2>
+    <form action="tablero.php" method="GET">
+        <label for="numerofilas">Número de Filas:</label>
+        <input type="number" id="numerofilas" name="numerofilas" required min="1">
+
+        <label for="numerocolumnas">Número de Columnas:</label>
+        <input type="number" id="numerocolumnas" name="numerocolumnas" required min="1">
+
+        <label for="fila">Fila donde aparece Bowser:</label>
+        <input type="number" id="fila" name="fila" required min="1">
+
+        <label for="columna">Columna donde aparece Bowser:</label>
+        <input type="number" id="columna" name="columna" required min="1">
+
+        <label for="color">Color de la casilla resaltada (hexadecimal):</label>
+        <input type="text" id="color" name="color" value="#FFC000" required>
+
+        <input type="submit" value="Generar Tablero">
+    </form>
+
+</body>
+</html>

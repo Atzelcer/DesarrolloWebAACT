@@ -1,0 +1,5 @@
+Programa php solicite numero, color de fondo, color (fdatos.html)
+e imprima al centro con borde negro , el nombre con los colores indicados.
+
+
+Vale 5 puntos los formularios en los parciales 
