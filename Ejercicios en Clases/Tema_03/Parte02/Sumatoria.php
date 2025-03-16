@@ -14,9 +14,12 @@
         <input type="number" name="sumando<?php echo $i; ?>"><br> 
         <?php } ?>
         <input type="submit" value="Sumar">
-        <input type="hidden" name="n" value="<?php echo $n; ?>">
+        <input type="hidden" name="n" value="<?php echo $n; ?>"> <!-- el hidden nos ayuda a percerbar un dato...-->
+
     </form>
 
-    
+    <!-- el hidden nos ayuda a percerbar un dato...-->
+     <!-- La seguna forma sera la de la cokkies al lado del cliente y la otra al lado del servidor...-->
+      <!-- Es la de sesiones o servidores ... y demas ..-->
 </body>
 </html>
