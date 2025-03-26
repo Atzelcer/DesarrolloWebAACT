@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Usuario</title>
+    <link rel="stylesheet" href="publicos/css/login-pagina_index.css">
+</head>
+<body>
+    <h2>Iniciar Sesión como Usuario</h2>
+
+    <form action="../seguridad/autenticarUsuario.php" method="post">
+        <label for="nombres">Nombre:</label>
+        <input type="text" name="nombres" required><br><br>
+      
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" required><br><br>
+      
+        <input type="submit" value="Ingresar" class="boton-ingreso">
+      </form>
+      
+  
+    <br>
+    <a href="../Pagina-principal-index.html" class="boton">Volver</a>
+</body>
+</html>
