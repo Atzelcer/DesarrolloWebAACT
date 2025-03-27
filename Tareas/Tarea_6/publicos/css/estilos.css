@@ -1,44 +1,102 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f6f9;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
 .tabla-datos {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: white;
-  }
-  
-  .tabla-datos th,
-  .tabla-datos td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .tabla-datos tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .tabla-datos tr:hover {
-    background-color: #eef;
-  }
-  
-  .boton {
-    display: inline-block;
-    padding: 8px 15px;
-    margin: 5px;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  .boton.editar {
-    background-color: #007bff;
-  }
-  
-  .boton.eliminar {
-    background-color: #dc3545;
-  }
-  
-  .boton.insertar {
-    background-color: #28a745;
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.tabla-datos th,
+.tabla-datos td {
+  border: 1px solid #ccc;
+  padding: 12px 10px;
+  text-align: center;
+  vertical-align: middle;
+  height: 100px; /* más altura */
+}
+
+.tabla-datos th {
+  background-color: #e9ecef;
+  font-weight: bold;
+  color: #333;
+}
+
+.tabla-datos tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla-datos tr:hover {
+  background-color: #eef5ff;
+}
+
+.tabla-datos img.foto-perfil {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #999;
+}
+
+/* Botones */
+.boton {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px 3px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.boton.editar {
+  background-color: #007bff;
+}
+
+.boton.editar:hover {
+  background-color: #0056b3;
+}
+
+.boton.eliminar {
+  background-color: #dc3545;
+}
+
+.boton.eliminar:hover {
+  background-color: #b21f2d;
+}
+
+.boton.insertar {
+  background-color: #28a745;
+}
+
+.boton.insertar:hover {
+  background-color: #1e7e34;
+}
+
+.boton.volver {
+  background-color: #6c757d;
+}
+
+.boton.volver:hover {
+  background-color: #5a6268;
+}
+
+/* Contenedor de botones centrado */
+.botones-finales {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}

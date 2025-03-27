@@ -18,5 +18,7 @@
         }
         $unido=implode
         $resutlado=sprintf("8x5 =%d <br>",8*5);
+
+    ?>
 </body>
 </html>

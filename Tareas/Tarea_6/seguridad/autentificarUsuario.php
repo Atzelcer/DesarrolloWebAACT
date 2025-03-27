@@ -2,25 +2,24 @@
 session_start();
 require("../configuracion/conexion.php");
 
-$nombres = $_POST["nombres"];
-$correo = $_POST["correo"];
+$usuario = $_POST["usuario"] ?? '';
+$contrasenia = sha1($_POST["contrasenia"]); // Encriptar
 
-// Consulta que busca por nombre y correo
-$sql = "SELECT * FROM personas WHERE nombres=? AND correo=?";
+// Buscar por nombre o correo + contraseña
+$sql = "SELECT * FROM personas WHERE (nombres=? OR correo=?) AND contrasenia=?";
 $stmt = $con->prepare($sql);
-$stmt->bind_param("ss", $nombres, $correo);
+$stmt->bind_param("sss", $usuario, $usuario, $contrasenia);
 $stmt->execute();
-
 $resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
-    $_SESSION["correo"] = $correo;
-    $_SESSION["nivel"] = 0; // usuario normal
-
-    echo "Bienvenido usuario";
+    $fila = $resultado->fetch_assoc();
+    $_SESSION["correo"] = $fila["correo"];
+    $_SESSION["nivel"] = 0; // Usuario normal
+    echo "Bienvenido " . htmlspecialchars($fila["nombres"]) . ".";
     echo '<meta http-equiv="refresh" content="2;url=../vistas/temasUsuario.php">';
 } else {
-    echo "Datos incorrectos. Nombre o correo no coinciden.";
+    echo "Nombre o correo y contraseña no coinciden.";
     echo '<meta http-equiv="refresh" content="3;url=../vistas/formLoginUsuario.html">';
 }
 ?>

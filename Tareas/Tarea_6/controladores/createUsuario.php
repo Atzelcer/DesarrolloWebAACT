@@ -8,8 +8,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sexo = $_POST["sexo"];
     $correo = $_POST["correo"];
     $profesion_id = $_POST["profesion_id"];
+    $contrasenia = sha1($_POST["contrasenia"]);
+    $foto = "";
 
-    // Verificar si ya existe el correo en la tabla personas
+    if (isset($_FILES["imagen_personal"]) && $_FILES["imagen_personal"]["error"] === 0) {
+        $nombre_temporal = $_FILES["imagen_personal"]["tmp_name"];
+        $nombre_final = "imagenes/subidas/" . basename($_FILES["imagen_personal"]["name"]);
+        move_uploaded_file($nombre_temporal, "../publicos/" . $nombre_final);
+        $foto = $nombre_final;
+    } elseif (!empty($_POST["imagen_predefinida"])) {
+        $foto = "imagenes/logos/" . $_POST["imagen_predefinida"];
+    } else {
+        $foto = $sexo === "Femenino" ? "imagenes/logos/default-femenino.png" : "imagenes/logos/default-masculino.png";
+    }
+
     $sql_verificar = "SELECT * FROM personas WHERE correo=?";
     $stmt = $con->prepare($sql_verificar);
     $stmt->bind_param("s", $correo);
@@ -17,23 +29,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = $stmt->get_result();
 
     if ($resultado->num_rows > 0) {
-        echo "Este correo ya está registrado como usuario.";
-        echo '<meta http-equiv="refresh" content="3;url=../vistas/formCrearUsuario.html">';
+        echo "Este correo ya está registrado.";
+        echo '<meta http-equiv="refresh" content="2;url=' . $_SERVER["HTTP_REFERER"] . '">';
     } else {
-        // Insertar nuevo usuario
-        $sql_insertar = "INSERT INTO personas (nombres, apellidos, fecha_nacimiento, sexo, correo, profesion_id) 
-                         VALUES (?, ?, ?, ?, ?, ?)";
+        $sql_insertar = "INSERT INTO personas (nombres, apellidos, fecha_nacimiento, sexo, correo, profesion_id, contrasenia, foto) 
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt_insertar = $con->prepare($sql_insertar);
-        $stmt_insertar->bind_param("sssssi", $nombres, $apellidos, $fecha_nacimiento, $sexo, $correo, $profesion_id);
+        $stmt_insertar->bind_param("ssssssss", $nombres, $apellidos, $fecha_nacimiento, $sexo, $correo, $profesion_id, $contrasenia, $foto);
 
         if ($stmt_insertar->execute()) {
-            echo "Usuario registrado exitosamente.";
-            echo '<meta http-equiv="refresh" content="2;url=../Pagina-principal-index.html">';
+            echo '<meta http-equiv="refresh" content="1;url=' . $_SERVER["HTTP_REFERER"] . '">';
         } else {
-            echo "Error al registrar usuario.";
+            echo "Error al registrar usuario: " . $stmt_insertar->error;
         }
     }
 } else {
-    echo "Acceso no permitido.";
+    echo "Acceso denegado.";
 }
 ?>

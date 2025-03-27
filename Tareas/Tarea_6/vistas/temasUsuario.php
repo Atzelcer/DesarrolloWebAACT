@@ -1,12 +1,12 @@
 <?php
 session_start();
-// require("../seguridad/verificarsesion.php");
+require("../seguridad/verificarsesion.php");
 
-// if ($_SESSION['nivel'] != 0) {
-//     echo "Acceso restringido solo para usuarios.";
-//     echo '<meta http-equiv="refresh" content="2;url=../Pagina-principal-index.html">';
-//     die();
-// }
+if ($_SESSION['nivel'] != 0) {
+    echo "Acceso restringido solo para usuarios.";
+    echo '<meta http-equiv="refresh" content="2;url=../Pagina-principal-index.html">';
+    die();
+}
 ?>
 
 <!DOCTYPE html>
