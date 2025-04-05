@@ -1,0 +1,111 @@
+#contenedor {
+    width: 900px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+  
+  #encabezado {
+    width: 900px;
+    height: 200px;
+    background-color: #d3e4f1;
+    border-bottom: 1px solid black;
+    position: relative;
+  }
+  
+  #logo {
+    width: 120px;
+    height: auto;
+    float: left;
+    margin: 10px;
+  }
+  
+  #titulo {
+    text-align: center;
+    padding-top: 20px;
+    color: #003366;
+    position: relative;
+  }
+  
+  #titulo h1 {
+    color: red;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .linea-fila {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .facultad {
+    color: blue;
+    font-size: 20px;
+    margin: 5px 0;
+  }
+  
+  .ubicacion {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .sucre {
+    color: red;
+    margin-right: 5px;
+  }
+  
+  .bol {
+    color: orange;
+  }
+  
+  .ivia {
+    color: green;
+  }
+  
+  #titulo h3,
+  #titulo h4 {
+    margin: 5px 0;
+  }
+  
+  #cuerpo {
+    display: flex;
+  }
+  
+  #menu {
+    width: 120px;
+    background-color: #555;
+    padding: 10px;
+  }
+  
+  #menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #menu li {
+    margin-bottom: 10px;
+  }
+  
+  #menu a {
+    display: block;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid black;
+  }
+  
+  #menu a:active {
+    background-color: #ffcc00;
+    color: black;
+  }
+  
+  #contenido {
+    width: 780px;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
