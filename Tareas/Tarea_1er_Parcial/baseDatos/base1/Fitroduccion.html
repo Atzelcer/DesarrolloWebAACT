@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Introducción</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      padding: 50px;
+    }
+
+    .contenedor {
+      width: 500px;
+      margin: auto;
+      border: 2px solid #3465a4;
+      padding: 40px;
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 16px;
+      margin-right: 20px;
+    }
+
+    select {
+      width: 60px;
+      padding: 6px;
+      font-size: 16px;
+      border: 2px solid #a94442;
+      color: black;
+      background-color: white;
+    }
+
+    .botones {
+      margin-top: 20px;
+    }
+
+    .botones input[type="submit"] {
+      background-color: orange;
+      border: 1px solid #a94442;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: black;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .botones input[type="reset"] {
+      background-color: #dff0d8;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <form action="Fdatos.php" method="post">
+      <label for="cantidad">Introduzca número alumnos:</label>
+      <select name="cantidad" id="cantidad" required>
+        <option value="">--</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+      </select>
+
+      <div class="botones">
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
