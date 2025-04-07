@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Pregunta 3</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor-form">
+        <h2>Formulario de Datos</h2>
+        <form action="menu.php" method="post" enctype="multipart/form-data">
+            <label for="item">Item:</label>
+            <input type="text" id="item" name="item" required>
+
+            <label for="color">Color texto:</label>
+            <input type="color" id="color" name="color" required>
+
+            <label for="color_fondo">Color de fondo:</label>
+            <input type="color" id="color_fondo" name="color_fondo" required>
+
+            <label for="imagen">Selecciona imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+
+            <button type="submit">Mostrar</button>
+        </form>
+
+        <a href="../inicio.php" class="volver-btn">← Volver al Inicio</a>
+    </div>
+</body>
+</html>
