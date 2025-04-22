@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Aritmeticas</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8dc;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        select, input[type="number"] {
+            margin: 10px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffcc00;
+            border-radius: 4px;
+            display: inline-block;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Operacion</h2>
+        <label for="operacion">Operación:</label>
+        <select id="operacion">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="multiplicacion">Multiplicación</option>
+            <option value="division">División</option>
+        </select><br>
+        
+        <label for="valorA">A:</label><br>
+        <input type="number" id="valorA"><br>
+        <label for="valorB">B:</label><br>
+        <input type="number" id="valorB"><br>
+    
+        <button onclick="calcular()">Calcular</button>
+    
+        <div id="resultado">Resultado aqui</div>
+    </div>
+    <script type="text/javascript">
+        function calcular() {
+            var a = parseFloat(document.getElementById("valorA").value);
+            var b = parseFloat(document.getElementById("valorB").value);
+            var operacion = document.getElementById("operacion").value;
+            var resultado = document.getElementById("resultado");
+            var res = 0;
+    
+            if (operacion === "suma") {
+                res = a + b;
+            } else if (operacion === "resta") {
+                res = a - b;
+            } else if (operacion === "multiplicacion") {
+                res = a * b;
+            } else if (operacion === "division") {
+                if (b !== 0) {
+                    res = a / b;
+                } else {
+                    res = "No se puede dividir por 0";
+                }
+            }
+    
+            resultado.textContent = "Resultado: " + res;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var palabra = prompt("Introduzca una palabra");
+        var longitud = palabra.length;
+
+        html= "<table>"
+        var tabla = "<table border='1' style='border-collapse: collapse; text-align: center;'>";
+        for (var i = 0; i < longitud; i++) {
+            tabla += "<tr>";
+            for (var j = 0; j < longitud; j++) {
+            if (i === j) {
+                tabla += "<td>" + palabra[i] + "</td>";
+            } else {
+                tabla += "<td></td>";
+            }
+            }
+            tabla += "</tr>";
+        }
+        tabla += "</table>";
+
+        document.write(tabla);
+    </script>
+</body>
+</html>

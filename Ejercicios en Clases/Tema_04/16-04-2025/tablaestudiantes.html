@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var dias = ["lunes","","miercoles","jueves","viernes","sabado","domingo"];  
+
+        var estudiantes = [
+            { nombre: "Juan", edad: 20, curso: "Matematicas" },
+            { nombre: "Maria", edad: 22, curso: "Historia" },
+            { nombre: "Pedro", edad: 21, curso: "Ciencias" }
+        ];
+
+         var html = "<table border='1'><tr><th>Nombre</th><th>Edad</th><th>Curso</th></tr>";
+        for (var i = 0; i < estudiantes.length; i++) {
+            html += "<tr>";
+            html += "<td>" + estudiantes[i].nombre + "</td>";
+            html += "<td>" + estudiantes[i].edad + "</td>";
+            html += "<td>" + estudiantes[i].curso + "</td>";
+        }
+    </script>
+
+
+
+</body>
+</html>

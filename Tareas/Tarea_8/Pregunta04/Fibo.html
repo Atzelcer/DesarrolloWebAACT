@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie Fibonacci</title>
+
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+
+        li {
+            font-size: 16px;
+            color: #555555;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Serie Fibonacci</h1>
+    
+    <script type="text/javascript">
+        var N = parseInt(prompt("Introduce la cantidad de numeros de la serie Fibonacci:"));
+        var fibonacci = [];
+    
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+    
+        for (var i = 2; i < N; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+    
+        document.write("<ul>");
+        for (var j = 0; j < N; j++) {
+            document.write("<li>" + fibonacci[j] + "</li>");
+        }
+        document.write("</ul>");
+    </script>
+    
+</body>
+</html>

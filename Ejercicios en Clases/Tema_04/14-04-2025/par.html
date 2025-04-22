@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function esPar(numero) {
+            return numero % 2 === 0;
+        }
+        function verificarNumero() {
+            const numero = parseInt(prompt("Ingrese un número:"));
+            if (isNaN(numero)) {
+                alert("Por favor, ingrese un número válido.");
+                return;
+            }
+
+            if (esPar(numero)) {
+                alert(`El número ${numero} es par.`);
+            } else {
+                alert(`El número ${numero} es impar.`);
+            }
+        }
+        verificarNumero();
+    </script>
+</body>
+</html>

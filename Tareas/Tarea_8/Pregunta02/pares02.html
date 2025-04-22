@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Numeros Pares</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contador de Numeros Pares</h1>
+
+    <script type="text/javascript">
+        var numeros = [];
+        var cantidadPares = 0;
+    
+        for (var i = 0; i < 5; i++) {
+            var num = parseInt(prompt("Introduce el número " + (i + 1) + ":"));
+            numeros[i] = num;
+            if (num % 2 === 0) {
+                cantidadPares++;
+            }
+        }
+    
+        document.write("<p>Numeros introducidos: " + numeros + "</p>");
+        document.write("<p>Cantidad de numeros pares: " + cantidadPares + "</p>");
+    </script>
+
+</body>
+</html>

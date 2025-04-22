@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script?>
+        // Definimos un arreglo de ejemplo
+        const numeros = [1, 2, 3, 4, 5];
+
+        // Función para sumar todos los elementos del arreglo
+        function sumarArreglo(arr) {
+            return arr.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+        }
+
+        // Función para encontrar el número máximo en el arreglo
+        function encontrarMaximo(arr) {
+            return Math.max(...arr);
+        }
+
+        // Función para encontrar el número mínimo en el arreglo
+        function encontrarMinimo(arr) {
+            return Math.min(...arr);
+        }
+
+        // Función para invertir el arreglo
+        function invertirArreglo(arr) {
+            return arr.reverse();
+        }
+
+        // Ejecución de las funciones y visualización de resultados
+        console.log("Suma del arreglo:", sumarArreglo(numeros));
+        console.log("Número máximo:", encontrarMaximo(numeros));
+        console.log("Número mínimo:", encontrarMinimo(numeros));
+        console.log("Arreglo invertido:", invertirArreglo([...numeros])); // Usamos spread operator para no modificar el original
+    </script>
+</body>
+</html>

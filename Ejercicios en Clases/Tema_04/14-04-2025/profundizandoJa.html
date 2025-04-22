@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // Es este punto veremos lo que llegaria ser el apartado de clases ... aplicando lo que llegarian a ser los 4 pilares de la programacion ... para un algortimo en donde se puede llegar a aplicar todo esto .. ademas de que debe de haber si o si la parte del tiempo.. explicamelo con comentarios cada uno de los puntos 
+    // 1. Encapsulamiento: Definimos una clase que encapsula la lógica de un algoritmo.
+    <script>
+        class Algoritmo {
+            constructor() {
+                this.resultado = 0;
+            }
+    
+            // 2. Abstracción: Definimos métodos que representan las operaciones del algoritmo.
+            sumar(a, b) {
+                this.resultado = a + b;
+                return this.resultado;
+            }
+    
+            restar(a, b) {
+                this.resultado = a - b;
+                return this.resultado;
+            }
+    
+            multiplicar(a, b) {
+                this.resultado = a * b;
+                return this.resultado;
+            }
+    
+            dividir(a, b) {
+                if (b !== 0) {
+                    this.resultado = a / b;
+                    return this.resultado;
+                } else {
+                    throw new Error("No se puede dividir entre cero");
+                }
+            }
+        }
+        // 3. Herencia: Creamos una clase derivada que extiende la funcionalidad de la clase base.
+
+        class AlgoritmoAvanzado extends Algoritmo {
+            potencia(base, exponente) {
+                this.resultado = Math.pow(base, exponente);
+                return this.resultado;
+            }
+    
+            raizCuadrada(numero) {
+                if (numero >= 0) {
+                    this.resultado = Math.sqrt(numero);
+                    return this.resultado;
+                } else {
+                    throw new Error("No se puede calcular la raíz cuadrada de un número negativo");
+                }
+            }
+        }
+
+        // 4. Polimorfismo: Usamos el mismo método para diferentes tipos de datos.
+        function calcular(algoritmo, a, b) {
+            console.log("Suma:", algoritmo.sumar(a, b));
+            console.log("Resta:", algoritmo.restar(a, b));
+            console.log("Multiplicación:", algoritmo.multiplicar(a, b));
+            console.log("División:", algoritmo.dividir(a, b));
+        }
+
+        // Ejemplo de uso
+        const algoritmo = new Algoritmo();
+        calcular(algoritmo, 10, 5);
+        console.log("Resultado de la suma:", algoritmo.resultado);
+        const algoritmoAvanzado = new AlgoritmoAvanzado();
+        console.log("Potencia:", algoritmoAvanzado.potencia(2, 3));
+        
+    </script>
+
+</body>
+</html>

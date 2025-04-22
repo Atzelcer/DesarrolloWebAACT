@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Definición de los datos en formato JSON
+        var estudiantes = [
+            { "nombre": "Melani", "edad": 20, "curso": "Metodologia del Desarrollo Web" },
+            { "nombre": "Roberto", "edad": 15, "curso": "Ingenieria en Telecomunicaciones" },
+            { "nombre": "Jhonatan", "edad": 83, "curso": "Ingenieria en Informatica" }
+        ];
+
+        var materias = {
+            "Materia": "Desarrollo web",
+            "Sigla": "SIS-256",
+            "Docente": [
+                { "nombre": "Juan", "apellido": "Porcel" },
+                { "nombre": "Maria", "apellido": "Perez" }
+            ],
+            "Horario": {
+                "16:00-18:00": "Lunes",
+                "18:00-20:00": "Martes"
+            },
+            "Alumnos": estudiantes
+        };
+
+        // ahora en este punto se tendra que llegar a un arreglo de objetos para luego llevarlo directamente a mostrar estos datos 
+        // en un archivo .json.... ensename como puedo llegar a hacerlo ?
+        // Convertir el objeto a una cadena JSON
+
+        
+
+
+        var jsonString = JSON.stringify(materias, null, 2);
+            html += "</tr>";
+        console.log(jsonString);
+        // Convertir la cadena JSON de nuevo a un objeto
+
+        console.log("Estudiantes:", estudiantes);
+        console.log("Materias:", materias);
+    </script>
+</body>
+</html>

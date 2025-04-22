@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Libro</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .view {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Informacion del Libro</h1>
+
+<div class="view" id="vistaLibro">
+
+</div>
+
+<script type="text/javascript">
+    function Libro(titulo, autor, editorial, anio) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editorial = editorial;
+        this.anio = anio;
+        this.mostrar = function() {
+            document.write("<p>Titulo: " + this.titulo + "</p>");
+            document.write("<p>Autor: " + this.autor + "</p>");
+            document.write("<p>Editorial: " + this.editorial + "</p>");
+            document.write("<p>Anio: " + this.anio + "</p>");
+        }
+    }
+
+    var titulo = prompt("Introduce el titulo del libro:");
+    var autor = prompt("Introduce el autor del libro:");
+    var editorial = prompt("Introduce la editorial del libro:");
+    var anio = prompt("Introduce el anio del libro:");
+
+    var libro = new Libro(titulo, autor, editorial, anio);
+    libro.mostrar();
+</script>
+
+</body>
+</html>
