@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operaciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f0f0;
+    }
+    .contenedor {
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .fila {
+      margin-bottom: 10px;
+    }
+    input[type="number"] {
+      width: 50px;
+      text-align: center;
+    }
+    #resultado {
+      margin-top: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: center;
+      padding: 5px;
+      font-weight: bold;
+    }
+    thead tr {
+      background-color: #296a8d;
+      color: white;
+    }
+    thead th {
+      border: 1px solid #296a8d;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #cce5ff;
+    }
+    tbody tr:nth-child(even) {
+      background-color: white;
+    }
+    tbody td {
+      border: 1px solid #66b3ff;
+    }
+  </style>
+</head>
+<body>
+    <div class="contenedor">
+      <div class="fila">
+        Tabla <input type="number" id="tabla" value="5" title="Ingrese el número de la tabla">
+        <input type="radio" name="operacion" value="+" checked title="Seleccione suma"> suma
+        <input type="radio" name="operacion" value="-" title="Seleccione resta"> resta
+        <input type="radio" name="operacion" value="*" title="Seleccione multiplicación"> multiplica
+        <input type="radio" name="operacion" value="/" title="Seleccione división"> dividir
+        Hasta <input type="number" id="hasta" value="4" title="Ingrese el número hasta el cual calcular">
+        <button type="button" onclick="calcular()">Calcular</button>
+      </div>
+      <div id="resultado"></div>
+    </div>
+  
+    <script>
+      function calcular() {
+        var tabla = parseInt(document.getElementById('tabla').value);
+        var hasta = parseInt(document.getElementById('hasta').value);
+        var operacion = document.querySelector('input[name="operacion"]:checked').value;
+        var resultado = document.getElementById('resultado');
+  
+        var contenido = "<table><thead><tr><th>1</th><th>" + operacion + "</th><th>" + tabla + "</th><th>=</th><th>" + operar(1, tabla, operacion) + "</th></tr></thead><tbody>";
+        for (var i = 2; i <= hasta; i++) {
+          contenido += "<tr><td>" + i + "</td><td>" + operacion + "</td><td>" + tabla + "</td><td>=</td><td>" + operar(i, tabla, operacion) + "</td></tr>";
+        }
+        contenido += "</tbody></table>";
+        resultado.innerHTML = contenido;
+      }
+  
+      function operar(a, b, op) {
+        if (op == "+") return a + b;
+        if (op == "-") return a - b;
+        if (op == "*") return a * b;
+        if (op == "/") return (a / b).toFixed(2);
+        return 0;
+      }
+    </script>
+  </body>
+</html>
