@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Insertar</title>
+</head>
+<body>
+    <form id="form-insertar" action="javascript:crear()" method="post">
+        
+        <label for="nombres">Nombres:</label>
+        <input type="text" name="nombres" id="nombres" required>
+        <br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" id="apellidos" required>
+        <br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
+        <br>
+
+        <label>Sexo:</label>
+        <input type="radio" name="sexo" id="masculino" value="Masculino" required>
+        <label for="masculino">Masculino</label>
+        <input type="radio" name="sexo" id="femenino" value="Femenino">
+        <label for="femenino">Femenino</label>
+        <br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" id="correo" required>
+        <br>
+
+        <label for="profesion_id">Profesión:</label>
+        <select name="profesion_id" id="profesion_id" required>
+            <option value="">Seleccione...</option>
+            <option value="1">Ingeniero</option>
+            <option value="2">Doctor</option>
+            <option value="3">Abogado</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Query</title>
+    <!-- Se incluye la biblioteca jQuery versión 1.9.1 desde un CDN -->
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            // Función para generar un color aleatorio en formato hexadecimal
+            function generarColorAleatorio() {
+                return '#' + Math.floor(Math.random() * 16777215).toString(16);
+            }
+
+            // Evento que se ejecuta al hacer clic en cualquier parte del documento
+            $(document).click(function() {
+                // Cambia el color de fondo del cuerpo
+                $('body').css('background-color', generarColorAleatorio());
+                // Cambia el color del texto del párrafo
+                $('#texto').css('color', generarColorAleatorio());
+                // Cambia el color de los botones
+                $('button').css('background-color', generarColorAleatorio());
+                $('button').css('color', generarColorAleator8io());
+            });
+        });
+    </script>
+    <!-- Un párrafo inicial con un texto -->
+    <p id="texto">Este es un texto inicial.</p>
+    <!-- Un botón que permitirá interactuar con el párrafo -->
+    <button id="botonAnimar">Animar texto</button>
+    <button id="botonRestaurar">Restaurar texto</button>
+    <button id="boton">Cambiar texto</button>
+    <script>
+        // Espera a que el DOM esté completamente cargado antes de ejecutar el código
+        $(document).ready(function() {
+            // Selecciona el botón con el id "boton" y le asigna un evento de clic
+            $('#boton').click(function() {
+                // Cambia el texto del párrafo con el id "texto"
+                $('#texto').text('El texto ha sido cambiado con jQuery.');
+            });
+        });
+    </script>
+</body>
+</html>

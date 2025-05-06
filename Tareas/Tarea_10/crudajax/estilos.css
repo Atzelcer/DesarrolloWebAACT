@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+nav {
+    background-color: #004466;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#content {
+    display: flex;
+    min-height: 90vh;
+}
+
+#menu {
+    width: 200px;
+    background-color: #2c2c2c;
+    padding: 20px;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+#menu ul li {
+    margin: 15px 0;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#menu ul li a:hover {
+    background-color: #006699;
+}
+
+#contenido {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-left: 1px solid #ccc;
+}
+
+form input,
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #fff;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table th {
+    background-color: #004466;
+    color: white;
+}
+
+a {
+    color: #006699;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
