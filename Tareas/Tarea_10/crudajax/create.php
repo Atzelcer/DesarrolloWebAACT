@@ -16,7 +16,7 @@ $stmt = $con->prepare(
 $stmt->bind_param("sssssi", $nombres, $apellidos, $fecha_nacimiento, $sexo, $correo, $profesion_id);
 
 if ($stmt->execute()) {
-    echo "Nuevo registro creado con exito.";
+    echo "Nuevo registro creado con éxito.";
 } else {
     echo "Error al insertar: " . $stmt->error;
 }
