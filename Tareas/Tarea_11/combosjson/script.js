@@ -6,7 +6,7 @@ function obtenerDepartamentos()
         if (ajax.readyState == 4 && ajax.status == 200) {
             lista = JSON.parse(ajax.responseText);
             var select = document.querySelector('#departamento');
-            select.innerHTML = ''; // Limpiar el contenido actual del select
+            select.innerHTML = '';
             for (var i = 0; i < lista.length; i++) {
                 var option = document.createElement('option');
                 option.value = lista[i].id;
@@ -31,7 +31,7 @@ function obtenerProvincias()
         if (ajax.readyState == 4 && ajax.status == 200) {
             lista = JSON.parse(ajax.responseText);
             var select = document.querySelector('#provincia');
-            select.innerHTML = ''; // Limpiar el contenido actual del select
+            select.innerHTML = '';
             for (var i = 0; i < lista.length; i++) {
                 var option = document.createElement('option');
                 option.value = lista[i].id;
@@ -57,7 +57,7 @@ function obtenerMunicipios()
                 
                 lista = JSON.parse(ajax.responseText);
                 var select = document.querySelector('#municipio');
-                select.innerHTML = ''; // Limpiar el contenido actual del select
+                select.innerHTML = ''; 
                 for (var i = 0; i < lista.length; i++) {
                     var option = document.createElement('option');
                     option.value = lista[i].id;
