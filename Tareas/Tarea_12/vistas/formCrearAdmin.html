@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Administrador</title>
+  <link rel="stylesheet" href="../publicos/css/style-login.css">
+</head>
+<body>
+  <div class="formulario">
+    <h2>Registrar Nuevo Administrador</h2>
+    <form action="../controladores/createAdmin.php" method="post">
+      <label for="correo">Correo:</label>
+      <input type="email" name="correo" required>
+
+      <label for="contrasenia">Contraseña:</label>
+      <input type="password" name="contrasenia" required>
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" required>
+
+      <div class="botones-finales">
+        <button type="submit">Registrar</button>
+        <button type="button" onclick="location.href='../Pagina-principal-index.html'">Volver</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

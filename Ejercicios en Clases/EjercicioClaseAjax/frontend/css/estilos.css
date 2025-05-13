@@ -1,0 +1,109 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.contenedor-central {
+  width: 1000px;
+  background-color: #fff;
+  border: 2px solid #9900cc;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+
+#maqueta {
+  display: flex;
+  flex: 1;
+  height: 600px;
+  overflow: hidden
+}
+
+#princip {
+  flex: 1;
+  padding: 285px;
+  background-color: white;
+  overflow-y: auto;
+  max-height: 100%; 
+}
+
+#men {
+  width: 170px;
+  background-color: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #003355;
+  padding: 20px 10px;
+}
+
+.botonera {
+  display: grid;
+  grid-template-columns: repeat(2, 50px);
+  gap: 15px;
+}
+
+#botonera button {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #006080;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+#botonera button:hover {
+  background-color: #004d66;
+}
+
+
+#princip {
+  flex: 1;
+  padding: 25px;
+  background-color: white;
+  overflow-y: auto;
+}
+
+#footer-barra {
+  display: flex;
+  align-items: center;
+  background-color: #003355;
+  padding: 15px 20px;
+  justify-content: space-between;
+}
+
+#menu-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#mensaj {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}

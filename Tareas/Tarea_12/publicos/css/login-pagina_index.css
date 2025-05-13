@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .titulo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .boton-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .contenedor-central {
+    display: flex;
+    height: calc(100vh - 100px);
+  }
+  
+  .lado {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .admin {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .usuario {
+    background-color: #ecf0f1;
+  }
+  
+  .boton-ingreso {
+    background-color: white;
+    color: #333;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+  
+  .admin .boton-ingreso {
+    background-color: #ffffff;
+    color: #e74c3c;
+  }
+  
+  .usuario .boton-ingreso {
+    background-color: #ffffff;
+    color: #2c3e50;
+  }
+  
+  .boton-ingreso:hover {
+    transform: scale(1.05);
+  }
+  
