@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- forminsertar.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Persona</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h2>Nueva Persona</h2>
+    <form action="javascript:crear()" method="post" id="form-insertar">
+        <label for="nombres">Nombres:</label>
+        <input type="text" name="nombres" required placeholder="Ingrese sus nombres" title="Ingrese sus nombres">
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" required placeholder="Ingrese sus apellidos" title="Ingrese sus apellidos">
+        
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" required placeholder="Seleccione su fecha de nacimiento" title="Seleccione su fecha de nacimiento">
+        
+        <label>Sexo:</label>
+        <div>
+            <input type="radio" name="sexo" value="Masculino" id="masculino" required>
+            <label for="masculino">Masculino</label>
+            
+            <input type="radio" name="sexo" value="Femenino" id="femenino">
+            <label for="femenino">Femenino</label>
+        </div>
+        
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" required placeholder="Ingrese su correo electrónico" title="Ingrese su correo electrónico">
+        
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>

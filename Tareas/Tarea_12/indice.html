@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Personas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="fetch.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h1>CRUD de Personas</h1>
+    </nav>
+    <div id="content">
+        <div id="menu">
+            <ul>
+                <li><a href="javascript:mostrarFormularioCrear()">Crear</a></li>
+                <li><a href="javascript:cargarContenido('read.php')">Listar</a></li>
+            </ul>
+        </div>
+        <div id="contenido"></div>
+    </div>
+
+    <script>
+    async function mostrarFormularioCrear() {
+        try {
+            const response = await fetch('forminsertar.html');
+            if (!response.ok) throw new Error('Error al cargar formulario');
+            const html = await response.text();
+
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-contenido">
+                    <span class="cerrar-modal">&times;</span>
+                    ${html}
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            modal.querySelector('.cerrar-modal').onclick = () => modal.remove();
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+    </script>
+</body>
+</html>
