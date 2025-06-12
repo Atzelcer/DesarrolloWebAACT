@@ -1,99 +1,98 @@
-let pantallaInferior = document.querySelector(".inferior");
-let pantallaSuperior = document.querySelector(".superior");
+const pantallaInf = document.querySelector('.inferior');
+const pantallaSup = document.querySelector('.superior');
 
-let valor1 = undefined;
-let valor2 = undefined;
-let operacion = undefined;
 
-let teclasNumeros = document.querySelectorAll(".numero");
+let valor1 = null;
+let valor2 = null;
+let operacion = null;
 
-teclasNumeros.forEach((tecla) => {
-  tecla.addEventListener("click", () => {
-    pantallaInferior.innerHTML += tecla.innerHTML;
+document.querySelectorAll('.numero').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // evitar dos puntos
+    if (btn.innerText === '.' && pantallaInf.innerText.includes('.')) return;
+    pantallaInf.innerText += btn.innerText;
   });
 });
 
-let teclasOperaciones = document.querySelectorAll(".operacion");
-
-teclasOperaciones.forEach((tecla) => {
-  tecla.addEventListener("click", () => {
-    pantallaSuperior.innerHTML = pantallaInferior.innerHTML;
-    pantallaInferior.innerHTML = "";
-    valor1 = parseFloat(pantallaSuperior.innerHTML);
-
-    operacion = tecla.innerHTML;
+document.querySelectorAll('.operacion').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (pantallaInf.innerText === '') return;
+    if (valor1 !== null && operacion !== null) {
+      calcular();
+    }
+    valor1 = parseFloat(pantallaInf.innerText);
+    operacion = btn.innerText;
+    // mostrar inmediatamente "valor1 operador"
+    pantallaSup.innerText = `${valor1} ${operacion}`;
+    pantallaInf.innerText = '';
   });
 });
 
-let teclaIgual = document.querySelector("#igual");
-teclaIgual.addEventListener("click", () => {
-  valor2 = parseFloat(pantallaInferior.innerHTML);
-  pantallaSuperior.innerHTML = `${valor1} ${operacion} ${valor2}`;
-  let resultado = undefined;
+
+document.getElementById('igual').addEventListener('click', () => {
+  if (operacion === null || pantallaInf.innerText === '') return;
+  valor2 = parseFloat(pantallaInf.innerText);
+  pantallaSup.innerText = `${valor1} ${operacion} ${valor2}`;
+  calcular();
+});
+
+
+function calcular() {
+  let res;
   switch (operacion) {
-    case "+":
-      resultado = valor1 + valor2;
-      break;
-    case "-":
-      resultado = valor1 - valor2;
-      break;
-    case "*":
-      resultado = valor1 * valor2;
-      break;
-    case "/":
-      resultado = valor1 / valor2;
-      break;
-    case "^":
-      resultado = Math.pow(valor1, valor2);
-      break;
-    default:
-      break;
+    case '+': res = valor1 + valor2; break;
+    case '-': res = valor1 - valor2; break;
+    case '*': res = valor1 * valor2; break;
+    case '/': res = valor1 / valor2; break;
+    case '^': res = Math.pow(valor1, valor2); break;
+    default: return;
   }
-  pantallaInferior.innerHTML = resultado;
-  valor1 = resultado;
+  pantallaInf.innerText = res;
+  valor1 = res;
+  operacion = null;
+}
+
+
+document.getElementById('all-clear').addEventListener('click', () => {
+  pantallaInf.innerText = '';
+  pantallaSup.innerText = '';
+  valor1 = valor2 = operacion = null;
 });
-
-let allClearButton = document.querySelector("#all-clear");
-let deleteButton = document.querySelector("#delete");
-
-allClearButton.addEventListener("click", () => {
-  valor1 = undefined;
-  valor2 = undefined;
-  operacion = undefined;
-  pantallaInferior.innerHTML = "";
-  pantallaSuperior.innerHTML = "";
-});
-
-deleteButton.addEventListener("click", () => {
-  pantallaInferior.innerHTML = pantallaInferior.innerHTML.slice(0, -1);
+document.getElementById('delete').addEventListener('click', () => {
+  pantallaInf.innerText = pantallaInf.innerText.slice(0, -1);
 });
 
 
 function factorial(n) {
-  if (n < 0) return NaN;
-  let res = 1;
-  for (let i = 1; i <= n; i++) res *= i;
-  return res;
+  if (!Number.isInteger(n) || n < 0) return NaN;
+  let f = 1;
+  for (let i = 1; i <= n; i++) f *= i;
+  return f;
 }
 
-let teclasUnarias = document.querySelectorAll(".operacion-unaria");
-teclasUnarias.forEach(tecla => {
-  tecla.addEventListener("click", () => {
-    let current = parseFloat(pantallaInferior.innerHTML);
+document.querySelectorAll('.operacion-unaria').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (pantallaInf.innerText === '') return;
+    const curr = parseFloat(pantallaInf.innerText);
     let res;
-    switch (tecla.innerHTML) {
-      case "√":
-        res = Math.sqrt(current);
+    switch (btn.innerText) {
+      case '√':
+        res = Math.sqrt(curr);
+        pantallaSup.innerText = `√(${curr})`;
         break;
-      case "log":
-        res = Math.log10(current);
+      case 'log':
+        res = Math.log10(curr);
+        pantallaSup.innerText = `log(${curr})`;
         break;
-      case "!":
-        res = factorial(current);
+      case '!':
+        res = factorial(curr);
+        pantallaSup.innerText = `${curr}!`;
         break;
+      default:
+        return;
     }
-    pantallaSuperior.innerHTML = `${tecla.innerHTML}(${current})`;
-    pantallaInferior.innerHTML = res;
+    pantallaInf.innerText = res;
     valor1 = res;
+    operacion = null;
   });
 });
